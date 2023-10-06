@@ -1,0 +1,19 @@
+{
+  "cwd": "/home/smartgift-dell/GMO/th/th-retailer-zm/th-app",
+  "name": "TH app",
+  "framework": "react",
+  "cssPreProcessor": "css",
+  "includeTailwind": true,
+  "package": "zmp-ui",
+  "stateManagement": "recoil",
+  "newProject": true,
+  "template": "single-view",
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false,
+    "useUiKits": true
+  }
+}

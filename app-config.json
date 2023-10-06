@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Ngo Huy Thang",
+    "headerColor": "#013772",
+    "textColor": "white",
+    "statusBarColor": "#013772",
+    "leftButton": "back",
+    "actionBarHidden": true,
+    "hideAndroidBottomNavigationBar": false,
+    "hideIOSSafeAreaBottom": false,
+    "selfControlLoading": false,
+    "statusBar": "normal"
+  },
+  "debug": false,
+  "listCSS": [],
+  "listSyncJS": ["/TweenMax.min.js", "/Winwheel.min.js"],
+  "listAsyncJS": [],
+  "pages": ["/", "/home", "/me"],
+  "template": {}
+}
