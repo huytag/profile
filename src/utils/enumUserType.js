@@ -1,9 +1,0 @@
-export const USER_OPERATOR = 1; // Nhân viên TH
-export const USER_OUTLET = 2; // Cửa hàng
-export const USER_SUPPLIER = 3; // Nhà cung cấp
-export const USER_STAFF = 4; //Nhân viên phụ trách, kỹ thuật viên,Nhân viên bảo trì
-export const USER_PG = 5; // Chương trình - PG;
-export const USER_SALEMAN = 6; // Chương trình - Nhà cung cấp;
-export const USER_DISTRIBUTOR = 7; // Nhà phân phối;
-export const USER_FIN = 8; // Fin;
-export const USER_SUB_ADMIN = 9; // Sub-Admin;
