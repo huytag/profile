@@ -1,447 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with Meyawo landing page.">
-    <meta name="author" content="Devcrud">
-    <link rel="icon" type="image/x-icon" href="https://cutekawaiiresources.files.wordpress.com/2018/03/767.gif?w=560">
-    <title>Jonny Ngo Landing page</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + Meyawo main styles -->
-    <link rel="stylesheet" href="assets/css/meyawo.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile Bio - Ngo Thang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
 </head>
+<body class="bg-gray-50 text-gray-800 font-inter antialiased px-3">
+  <!-- Container -->
+  <main class="max-w-xl mx-auto my-8 bg-white rounded-2xl shadow-md overflow-hidden">
+    <!-- Cover image -->
+    <div class="relative h-28 sm:h-36 bg-gradient-to-tr from-[#0f172a] via-[#1e293b] to-[#0f172a] rounded-t-2xl overflow-hidden">
+      <img 
+        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0477d374-dae5-45ed-8c6d-74830089e530.png" 
+        alt="Modern abstract dark navy blue gradient background with smooth shapes and textures" 
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none'"
+      />
+    </div>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <!-- Profile & user info -->
+    <section class="relative px-6 sm:px-10 -mt-16 flex flex-col items-center text-center">
+      <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-white shadow-lg bg-white overflow-hidden">
+        <img 
+          src="https://i.pinimg.com/736x/d0/60/37/d06037ab90de46a4090961c50e6b4917.jpg" 
+          alt="Avatar" 
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <p class="text-sm text-gray-500 mt-3">@jonny_ngo</p>
+      <h1 class="text-2xl sm:text-3xl font-semibold mt-1 tracking-tight text-gray-900">Ngo Thang</h1>
+      <div class="flex flex-wrap justify-center sm:justify-center gap-2 mt-2 text-gray-500 text-sm font-medium">
+        <span>Isekai</span>
+        <span class="mx-1">&bull;</span>
+        <span>Joined Jul 2025</span>
+      </div>
 
-    <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
-        <div class="container">
-            <a class="logo" href="#">Jonny Ngo</a>
-            <ul class="nav">
-                <li class="item">
-                    <a class="link" href="#home">Home</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#about">About</a>
-                </li>
-                <!-- <li class="item">
-                    <a class="link" href="#portfolio">Portfolio</a>
-                </li> -->
-                <!-- <li class="item">
-                    <a class="link" href="#testmonial">Testmonial</a>
-                </li> -->
-                <li class="item">
-                    <a class="link" href="#blog">Blog</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#contact">Contact</a>
-                </li>
-                <!-- <li class="item ml-md-3">
-                    <a href="components.html" class="btn btn-primary">Components</a>
-                </li> -->
-            </ul>
-            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
-                </div>
-            </a>
-        </div>
-    </nav><!-- End of Page Navbar -->
+      <!-- Buttons -->
+      <div class="mt-5 flex flex-wrap justify-center gap-4">
+        <button class="flex items-center gap-2 border border-gray-300 rounded-lg py-2 px-4 text-gray-700 font-medium hover:bg-gray-100 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+          Follow
+        </button>
+        <button class="flex items-center gap-2 border border-gray-300 rounded-lg py-2 px-4 text-gray-700 font-medium hover:bg-gray-100 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2m-6 0H7a2 2 0 01-2-2v-6a2 2 0 012-2h6m0 0V5a3 3 0 116 0v3" />
+          </svg>
+          Message
+        </button>
+        <button aria-label="More options" class="flex items-center justify-center border border-gray-300 rounded-lg py-2 px-3 text-gray-700 hover:bg-gray-100 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="1" />
+            <circle cx="19" cy="12" r="1" />
+            <circle cx="5" cy="12" r="1" />
+          </svg>
+        </button>
+      </div>
 
-    <!-- page header -->
-    <header id="home" class="header">
-        <div class="overlay"></div>
-        <div class="header-content container">
-            <h1 class="header-title">
-                <span class="up">HI!</span>
-                <span class="down">I am Jonny Ngo</span>
-            </h1>
-            <p class="header-subtitle">FULLSTACK WEB DEVELOPER</p>
-
-            <button class="btn btn-primary">Visit My Works</button>
-        </div>
-    </header><!-- end of page header -->
-
-    <!-- about section -->
-    <section class="section pt-0" id="about">
-        <div class="container text-center">
-            <div class="about">
-                <div class="about-img-holder">
-                    <img src="assets/imgs/me.jpg" class="about-img"
-                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                </div>
-                <div class="about-caption">
-                    <p class="section-subtitle">Who Am I ?</p>
-                    <h2 class="section-title mb-3">About Me</h2>
-                    <p>
-                        My name is Ngo Huy Thang, currently a full stack developer, graduating in 2022 with nearly 3 years of experience. I have learned and participated in many different real-life projects such as Web, Game, and Mobile. 
-                    </p>
-                    <button class="btn-rounded btn btn-outline-primary mt-4" onclick="download()">Download CV</button>
-                </div>
-            </div>
-        </div>
+      <!-- Bio/Description -->
+      <p class="mt-6 max-w-xl text-center text-gray-700 text-sm leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor massa nec erat ultricies sagittis. Sed tempus tincidunt erat, sed scelerisque erat malesuada sed.
+      </p>
     </section>
 
-    <!-- service section -->
-    <!-- <section class="section" id="service">
-        <div class="container text-center">
-            <p class="section-subtitle">What I Do ?</p>
-            <h6 class="section-title mb-6">Service</h6>
-            
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/pencil-case.svg"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Adipisicing</h6>
-                            <p class="subtitle">Labore velit culpa adipisci excepturi consequuntur itaque in nam
-                                molestias dolorem iste quod.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/responsive.svg"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Sapiente</h6>
-                            <p class="subtitle">Labore velit culpa adipisci excepturi consequuntur itaque in nam
-                                molestias dolorem iste quod.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/toolbox.svg"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Placeat</h6>
-                            <p class="subtitle">Labore velit culpa adipisci excepturi consequuntur itaque in nam
-                                molestias dolorem iste quod.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/analytics.svg"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Iusto</h6>
-                            <p class="subtitle">Labore velit culpa adipisci excepturi consequuntur itaque in nam
-                                molestias dolorem iste quod.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="px-8 sm:px-12 mt-10 pb-10">
+      <!-- Information Header -->
+      <h2 class="text-gray-900 text-lg font-semibold mb-5 border-b border-gray-200 pb-2">Information</h2>
+
+      <!-- Information items grid -->
+      <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 text-gray-600 text-sm">
+        <div class="flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linejoin="round" stroke-linecap="round" d="M12 2a10 10 0 11-7.016 17.017L4 22l4.984-1.016A10 10 0 0112 2z" />
+          </svg>
+          <dt class="font-medium text-gray-700">Website</dt>
+          <dd class="ml-auto">thangchay.id.vn</dd>
         </div>
-    </section> -->
-    <!-- end of service section -->
 
-    <!-- portfolio section -->
-    <!-- <section class="section" id="portfolio">
-        <div class="container text-center">
-            <p class="section-subtitle">What I Did ?</p>
-            <h6 class="section-title mb-6">Portfolio</h6>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img src="assets/imgs/folio-1.jpg" class="portfolio-card-img"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                    <p class="font-weight-normal">Category: Web Templates</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/folio-2.jpg" class="img-responsive rounded"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                    <p class="font-weight-normal">Category: Web Templates</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/folio-3.jpg" class="img-responsive rounded"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Designing</h5>
-                                    <p class="font-weight-normal">Category: Web Templates</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-            </div>
+        <div class="flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linejoin="round" stroke-linecap="round" d="M16 12a4 4 0 01-8 0m8 0a4 4 0 00-8 0m8 0a8 8 0 11-8 0 8 8 0 018 0z" />
+          </svg>
+          <dt class="font-medium text-gray-700">Email</dt>
+          <dd class="ml-auto truncate max-w-xs sm:max-w-none">huytagicloud@gmail.com</dd>
         </div>
-    </section>  -->
-    <!-- end of portfolio section -->
 
-    <!-- pricing section -->
-    <!-- <section class="section" id="pricing">
-        <div class="container text-center">
-            <p class="section-subtitle">How Much I Charge ?</p>
-            <h6 class="section-title mb-6">My Pricing</h6>
-            <div class="pricing-wrapper">
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/scooter.svg"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Free</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p><i class="ti-close"></i></p>
-                            <p><i class="ti-close"></i></p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>0.00/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Basic</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p>accusamus laboriosam</p>
-                            <p><i class="ti-close"></i></p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>9.99/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/startup.svg"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Premium</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p>accusamus laboriosam</p>
-                            <p>inventore omnis</p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>99.9/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
-                </div>
-
-            </div>
-        </div> 
-    </section> -->
-    <!-- end of pricing section -->
-
-    <!-- section -->
-    <!-- <section class="section-sm bg-primary">
-        <div class="container text-center text-sm-left">
-            <div class="row align-items-center">
-                <div class="col-sm offset-md-1 mb-4 mb-md-0">
-                    <h6 class="title text-light">Want to work with me?</h6>
-                    <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
-                </div>
-                <div class="col-sm offset-sm-2 offset-md-3">
-                    <button class="btn btn-lg my-font btn-light rounded">Hire Me</button>
-                </div>
-            </div>
+        <div class="flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linejoin="round" stroke-linecap="round" d="M3 10l6 6-4 4m9-18v12m0 0l-4-4m4 4l4-4" />
+          </svg>
+          <dt class="font-medium text-gray-700">Phone</dt>
+          <dd class="ml-auto whitespace-nowrap">+84 812 455 939</dd>
         </div>
-    </section> -->
 
-    <!-- testimonial section -->
-    <!-- <section class="section" id="testmonial">
-        <div class="container text-center">
-            <p class="section-subtitle">What Think Client About Me ?</p>
-            <h6 class="section-title mb-6">Testmonial</h6>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar2.jpg" class="testimonial-card-img"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Eaque doloribus autem aperiam earum nostrum omnis blanditiis corporis perspiciatis
-                                adipisci nihil.</p>
-                            <h6 class="testimonial-card-title">Emily Reb</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar3.jpg" class="testimonial-card-img"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Eaque doloribus autem aperiam earum nostrum omnis blanditiis corporis perspiciatis
-                                adipisci nihil.</p>
-                            <h6 class="testimonial-card-title">Emily Reb</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </section>  -->
+        <div class="flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linejoin="round" stroke-linecap="round" d="M12 4v16m-6-8h12" />
+          </svg>
+          <dt class="font-medium text-gray-700">Joined</dt>
+          <dd class="ml-auto whitespace-nowrap">09 July, 2025</dd>
+        </div>
+      </dl>
 
-    <!-- blog section -->
-    <section class="section" id="blog">
-        <!-- container -->
-        <div class="container text-center">
-            <p class="section-subtitle">Recent Posts?</p>
-            <h6 class="section-title mb-6">Blog</h6>
-            <!-- blog-wrapper -->
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/21-09-chung-ket-cuoc-thi-sinh-vien-nghien-cuu-khoa-hoc-nam-hoc-2021-2022-320220921114947.jpg" class="blog-card-img"
-                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Giải thưởng sinh viên nghiên cứu khoa học: Nhiều đề tài mang tính thời sự, khả năng ứng dụng đoạt giải nhất</h6>
-
-                        <p class="blog-card-caption">
-                            <a href="#">By: Admin</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 73</a>
-                            <a href="#"><i class="ti-comment"></i> 3</a>
-                        </p>
-                        <p>Tại vòng chung kết cuộc thi "Sinh viên nghiên cứu khoa học năm học 2021 - 2022", vừa diễn ra, Trường Đại học Công nghiệp Thực phẩm TP. Hồ Chí Minh (HUFI), đã trao 3 giải nhất, 4 giải nhì, 3 giải ba và 12 giải khuyến khích cho lĩnh vực công nghệ thực phẩm, khoa học kỹ thuật, kinh tế xã hội cho các đề tài tham dự giải thưởng "Sinh viên nghiên cứu khoa học".</p>
-
-                        <p><b>Đối với lĩnh vực khoa học kỹ thuật, giải nhất được trao cho: Đề tài “Hệ thống đếm và phân loại sản phẩm trên băng tải ứng dụng trí tuệ nhân tạo”, nhóm sinh viên: Ngô Huy Thắng (Lớp 09DHTH8), Nguyễn Duy Khang (Lớp 11DHBM2) thuộc Khoa Công nghệ Thông tin.</b>
-                        </p>
-                        
-                        <a href="https://congthuong.vn/giai-thuong-sinh-vien-nghien-cuu-khoa-hoc-nhieu-de-tai-mang-tinh-thoi-su-kha-nang-ung-dung-doat-giai-nhat-220694.html" target="_blank" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
-            <!-- blog-wrapper -->
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/img-2.jpg" class="blog-card-img"
-                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Vì sao bạn nên học Lập trình? Những khả năng và tố chất cần có để học lập trình?</h6>
-
-                        <p class="blog-card-caption">
-                            <a href="#">By: Admin</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 26</a>
-                            <a href="#"><i class="ti-comment"></i> 2</a>
-                        </p>
-
-                        <p>Không ai có thể phủ nhận rằng công nghệ hiện đang thống trị nhiều ngành công nghiệp khác nhau. Điều hiển nhiên là cụm từ “học lập trình” trở nên thông dụng vào ngay lúc này. Tất cả mọi người từ Bill Gate cho đến Obama đều khuyến khích giới trẻ hãy thử học lập trình đi!</p>
-
-                        <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
-        </div><!-- end of container -->
-    </section><!-- end of blog section -->
-
-    <!-- contact section -->
-    <section class="section" id="contact">
-        <div class="container text-center">
-            <p class="section-subtitle">How can you communicate?</p>
-            <h6 class="section-title mb-5">Contact Me</h6>
-            <!-- contact form -->
-            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
-                <div class="form-row">
-                    <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email" requried>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <textarea name="comment" id="comment" rows="6" class="form-control"
-                            placeholder="Write Something"></textarea>
-                    </div>
-                    <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
-                    </div>
-                </div>
-            </form><!-- end of contact form -->
-        </div><!-- end of container -->
-    </section><!-- end of contact section -->
-
-    <!-- footer -->
-    <div class="container">
-        <footer class="footer">
-            <p class="mb-0">Copyright
-                <script>document.write(new Date().getFullYear())</script> &copy;
-                Jonny Ngo
-            </p>
-            <div class="social-links text-right m-auto ml-sm-auto">
-                <a target="_blank" href="https://www.facebook.com/profile.php?id=100039855851785&mibextid=LQQJ4d" class="link"><i class="ti-facebook"></i></a>
-                <!-- <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a> -->
-                <!-- <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a> -->
-                <!-- <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a> -->
-                <a target="_blank" href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                <!-- <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a> -->
-            </div>
-        </footer>
-    </div> <!-- end of page footer -->
-
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap 3 affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Meyawo js -->
-    <script src="assets/js/meyawo.js"></script>
+      <!-- Tags badges -->
+      <div class="mt-8 flex flex-wrap gap-2 border-t border-gray-200 pt-6">
+        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Developer</span>
+        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">UX Designer</span>
+        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Design System</span>
+        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Product</span>
+        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Succesfull</span>
+      </div>
+    </section>
+  </main>
 
 </body>
-
 </html>
 
-<script>
-    function download() {
-        const url = 'https://docs.google.com/document/d/1yn_dcVdXzX_2pgCZNZtaB__UYOAgOwCF/edit'
-        const a = document.createElement('a')
-        a.href = url
-        a.download = url.split('/').pop()
-        document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
-      }
-</script>

@@ -1,0 +1,10 @@
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;    
+  }
+}
