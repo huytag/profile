@@ -36,3 +36,9 @@ Thumbs.db
 
 # Production build
 www/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
