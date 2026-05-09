@@ -708,24 +708,32 @@
   </section>
 
   <!-- Projects -->
-  <section class="section" id="projects">
+  <section class="section" id="projects" style="padding-top:100px;">
     <h2 class="section-title" data-i18n="section.projects.title">Featured Projects</h2>
     <div class="projects-list">
       <div class="project-item" id="console4">
         <div class="project-header" onclick="toggleProject('console4')">
           <div class="project-title-wrap">
             <div class="project-title" data-i18n="proj.console4.title">Console4 - Petit Gift</div>
-            <div class="project-desc" data-i18n="proj.console4.desc">Campaign & coupon management for 株式会社エムディーピー</div>
+            <div class="project-desc">Feb 2023 – Present · Team size 9</div>
           </div>
           <span class="project-badge blue" data-i18n="proj.console4.badge">Team Leader</span>
         </div>
         <div class="project-body">
-          <div data-i18n="proj.console4.detail">Analysis, design, code review, optimization, bug fixing, database design, and STG deployment for coupon, auth, sns services.</div>
+          <div data-i18n="proj.console4.detail">Campaign system, coupon, product, and template management application for 株式会社エムディーピー.</div>
+          <ul class="timeline-tasks" style="margin-top:12px;">
+            <li data-i18n="proj.console4.items.0">Analysis and design, code review, code optimization, bug fixing</li>
+            <li data-i18n="proj.console4.items.1">Project progress management, feature development, support project members</li>
+            <li data-i18n="proj.console4.items.2">Design database, setup coupon service, auth service, sns service, short service, utils service</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">Laravel</span>
             <span class="tech-tag">VueJs</span>
-            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">S3</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Nginx</span>
             <span class="tech-tag">Redis</span>
+            <span class="tech-tag">MySQL</span>
             <span class="tech-tag">Kubernetes</span>
             <span class="tech-tag">OpenSearch</span>
           </div>
@@ -735,17 +743,24 @@
         <div class="project-header" onclick="toggleProject('acHiroshima')">
           <div class="project-title-wrap">
             <div class="project-title" data-i18n="proj.acHiroshima.title">AC Hiroshima Bank</div>
-            <div class="project-desc" data-i18n="proj.acHiroshima.desc">Customer loyalty program with daily 12M data sync</div>
+            <div class="project-desc">Jul 2025 – Nov 2025 · Team size 5</div>
           </div>
           <span class="project-badge purple" data-i18n="proj.acHiroshima.badge">Team Leader</span>
         </div>
         <div class="project-body">
-          <div data-i18n="proj.acHiroshima.detail">Code review, optimization, database design, and synchronized core user data with 12 million data points per day.</div>
+          <div data-i18n="proj.acHiroshima.detail">Customer loyalty program with survey module, coupon distribution and task completion system.</div>
+          <ul class="timeline-tasks" style="margin-top:12px;">
+            <li data-i18n="proj.acHiroshima.items.0">Code review, code optimization, bug fixing, project progress management</li>
+            <li data-i18n="proj.acHiroshima.items.1">Feature development as required, support project members</li>
+            <li data-i18n="proj.acHiroshima.items.2">Design database, synchronize core user data with 12 million data points per day</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">Laravel 12</span>
             <span class="tech-tag">VueJs</span>
-            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">S3</span>
+            <span class="tech-tag">Nginx</span>
             <span class="tech-tag">Redis</span>
+            <span class="tech-tag">MySQL</span>
           </div>
         </div>
       </div>
@@ -753,17 +768,23 @@
         <div class="project-header" onclick="toggleProject('smc')">
           <div class="project-title-wrap">
             <div class="project-title" data-i18n="proj.smc.title">SMC Line ミニアプリ</div>
-            <div class="project-desc" data-i18n="proj.smc.desc">Campaign & coupon ecosystem for SMC Corporation</div>
+            <div class="project-desc">Feb 2025 – Present · Team size 14</div>
           </div>
           <span class="project-badge cyan" data-i18n="proj.smc.badge">Team Leader</span>
         </div>
         <div class="project-body">
-          <div data-i18n="proj.smc.detail">Led backend console with auth, coupon, SNS, utility services and managed STG releases. Team size: 14.</div>
+          <div data-i18n="proj.smc.detail">Campaign and coupon management ecosystem for SMC Corporation.</div>
+          <ul class="timeline-tasks" style="margin-top:12px;">
+            <li data-i18n="proj.smc.items.0">Led backend console built on Laravel 12, Vue.js, S3, Docker, Redis, MySQL, Kubernetes</li>
+            <li data-i18n="proj.smc.items.1">Designed auth, coupon, SNS, utility services and managed STG releases</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">Laravel 12</span>
             <span class="tech-tag">Vue.js</span>
-            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">S3</span>
             <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">MySQL</span>
             <span class="tech-tag">Kubernetes</span>
           </div>
         </div>
@@ -772,18 +793,25 @@
         <div class="project-header" onclick="toggleProject('th')">
           <div class="project-title-wrap">
             <div class="project-title" data-i18n="proj.th.title">TH Retailer App & Zalo miniapp</div>
-            <div class="project-desc" data-i18n="proj.th.desc">Retail chain management platform for TH Group</div>
+            <div class="project-desc">Jun 2023 – May 2024 · Team size 7</div>
           </div>
           <span class="project-badge orange" data-i18n="proj.th.badge">Team Leader</span>
         </div>
         <div class="project-body">
-          <div data-i18n="proj.th.detail">Analysis, design, code reviews, performance tuning, CI/CD implementation. Team size: 7.</div>
+          <div data-i18n="proj.th.detail">Retail chain management platform for TH Group.</div>
+          <ul class="timeline-tasks" style="margin-top:12px;">
+            <li data-i18n="proj.th.items.0">Owned analysis/design, code reviews, performance tuning, and schedule management</li>
+            <li data-i18n="proj.th.items.1">Implemented RabbitMQ, MinIO, PostgreSQL replication, cron sync, CI/CD for STG, UAT, production</li>
+            <li data-i18n="proj.th.items.2">Stack: Laravel, React, RabbitMQ, MinIO, Docker, Nginx, Redis, MongoDB, PostgreSQL</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">Laravel</span>
             <span class="tech-tag">React</span>
             <span class="tech-tag">RabbitMQ</span>
+            <span class="tech-tag">MinIO</span>
             <span class="tech-tag">PostgreSQL</span>
             <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Docker</span>
           </div>
         </div>
       </div>
@@ -791,16 +819,21 @@
         <div class="project-header" onclick="toggleProject('shop')">
           <div class="project-title-wrap">
             <div class="project-title" data-i18n="proj.shop.title">SHOP Auto Coupon</div>
-            <div class="project-desc" data-i18n="proj.shop.desc">ASP coupon management for 株式会社エムディビー</div>
+            <div class="project-desc">Mar 2024 – Jul 2024</div>
           </div>
           <span class="project-badge green" data-i18n="proj.shop.badge">Team Leader</span>
         </div>
         <div class="project-body">
-          <div data-i18n="proj.shop.detail">Code review, optimization, bug fixing, Google Maps integration, DB design and STG deployment.</div>
+          <div data-i18n="proj.shop.detail">ASP coupon management applications for 株式会社エムディビー.</div>
+          <ul class="timeline-tasks" style="margin-top:12px;">
+            <li data-i18n="proj.shop.items.0">Handled code review, optimization, bug fixing, and Google Maps integration</li>
+            <li data-i18n="proj.shop.items.1">Designed secure database schemas and managed STG deployments</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">CakePHP</span>
             <span class="tech-tag">S3</span>
             <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Nginx</span>
             <span class="tech-tag">MySQL</span>
           </div>
         </div>
@@ -809,15 +842,21 @@
         <div class="project-header" onclick="toggleProject('yamato')">
           <div class="project-title-wrap">
             <div class="project-title" data-i18n="proj.yamato.title">ヤマト管理システム</div>
-            <div class="project-desc" data-i18n="proj.yamato.desc">Logistics & dynamic QR for TOPPAN</div>
+            <div class="project-desc">Mar 2023 – Sep 2023</div>
           </div>
           <span class="project-badge orange" data-i18n="proj.yamato.badge">Full Stack / BE</span>
         </div>
         <div class="project-body">
-          <div data-i18n="proj.yamato.detail">Analysis, design, project management, secure API integration with Toppan payment QR.</div>
+          <div data-i18n="proj.yamato.detail">Logistics management and dynamic QR payment solutions for TOPPAN & 株式会社エムディビー.</div>
+          <ul class="timeline-tasks" style="margin-top:12px;">
+            <li data-i18n="proj.yamato.items.0">Performed analysis, design, project management, and secure API integration with Toppan payment QR</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">Laravel Livewire</span>
             <span class="tech-tag">CakePHP</span>
+            <span class="tech-tag">S3</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Nginx</span>
             <span class="tech-tag">Swoole</span>
             <span class="tech-tag">MySQL</span>
           </div>
@@ -827,17 +866,22 @@
         <div class="project-header" onclick="toggleProject('catfee')">
           <div class="project-title-wrap">
             <div class="project-title" data-i18n="proj.catfee.title">Catfee Clubs</div>
-            <div class="project-desc" data-i18n="proj.catfee.desc">Web3 in-game items for Dai Phat</div>
+            <div class="project-desc">Jul 2021 – May 2022</div>
           </div>
           <span class="project-badge pink" data-i18n="proj.catfee.badge">Full Stack Dev</span>
         </div>
         <div class="project-body">
-          <div data-i18n="proj.catfee.detail">Blockchain integrations with Metamask, Ethereum, Binance, Solana wallets.</div>
+          <div data-i18n="proj.catfee.detail">Web3 application selling in-game items for Joint Stock Company Dai Phat.</div>
+          <ul class="timeline-tasks" style="margin-top:12px;">
+            <li data-i18n="proj.catfee.items.0">Developed blockchain integrations with Metamask, Ethereum, Binance, Solana wallets</li>
+            <li data-i18n="proj.catfee.items.1">Worked on React, NestJS, Docker, Nginx, PostgreSQL stack</li>
+          </ul>
           <div class="project-tech">
             <span class="tech-tag">React</span>
             <span class="tech-tag">NestJS</span>
             <span class="tech-tag">PostgreSQL</span>
             <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Nginx</span>
           </div>
         </div>
       </div>
@@ -893,13 +937,13 @@
           mwg: { time: "Oct 2020 – Jun 2021", company: "Mobile World Investment Corporation (MWG)", role: "Web Developer — ERP", items: ["Developed ERP purchasing modules for Dien May Xanh, Topzone, and Nha Thuoc An Khang", "Reviewed AngularJS/C# codebase, optimizing performance and maintainability", "Collaborated with large project teams, improving management and communication skills"] }
         },
         proj: {
-          console4: { title: "Console4 - Petit Gift", desc: "Campaign & coupon management for 株式会社エムディーピー", badge: "Team Leader", detail: "Analysis, design, code review, optimization, bug fixing, database design, and STG deployment for coupon, auth, sns services." },
-          acHiroshima: { title: "AC Hiroshima Bank", desc: "Customer loyalty program with daily 12M data sync", badge: "Team Leader", detail: "Code review, optimization, database design, and synchronized core user data with 12 million data points per day." },
-          smc: { title: "SMC Line ミニアプリ", desc: "Campaign & coupon ecosystem for SMC Corporation", badge: "Team Leader", detail: "Led backend console with auth, coupon, SNS, utility services and managed STG releases. Team size: 14." },
-          th: { title: "TH Retailer App & Zalo miniapp", desc: "Retail chain management platform for TH Group", badge: "Team Leader", detail: "Analysis, design, code reviews, performance tuning, CI/CD implementation. Team size: 7." },
-          shop: { title: "SHOP Auto Coupon", desc: "ASP coupon management for 株式会社エムディビー", badge: "Team Leader", detail: "Code review, optimization, bug fixing, Google Maps integration, DB design and STG deployment." },
-          yamato: { title: "ヤマト管理システム", desc: "Logistics & dynamic QR for TOPPAN", badge: "Full Stack / BE", detail: "Analysis, design, project management, secure API integration with Toppan payment QR." },
-          catfee: { title: "Catfee Clubs", desc: "Web3 in-game items for Dai Phat", badge: "Full Stack Dev", detail: "Blockchain integrations with Metamask, Ethereum, Binance, Solana wallets." }
+          console4: { title: "Console4 - Petit Gift", badge: "Team Leader", detail: "Campaign system, coupon, product, and template management application for 株式会社エムディーピー.", items: ["Analysis and design, code review, code optimization, bug fixing", "Project progress management, feature development, support project members", "Design database, setup coupon service, auth service, sns service, short service, utils service"] },
+          acHiroshima: { title: "AC Hiroshima Bank", badge: "Team Leader", detail: "Customer loyalty program with survey module, coupon distribution and task completion system.", items: ["Code review, code optimization, bug fixing, project progress management", "Feature development as required, support project members", "Design database, synchronize core user data with 12 million data points per day"] },
+          smc: { title: "SMC Line ミニアプリ", badge: "Team Leader", detail: "Campaign and coupon management ecosystem for SMC Corporation.", items: ["Led backend console built on Laravel 12, Vue.js, S3, Docker, Redis, MySQL, Kubernetes", "Designed auth, coupon, SNS, utility services and managed STG releases"] },
+          th: { title: "TH Retailer App & Zalo miniapp", badge: "Team Leader", detail: "Retail chain management platform for TH Group.", items: ["Owned analysis/design, code reviews, performance tuning, and schedule management", "Implemented RabbitMQ, MinIO, PostgreSQL replication, cron sync, CI/CD for STG, UAT, production", "Stack: Laravel, React, RabbitMQ, MinIO, Docker, Nginx, Redis, MongoDB, PostgreSQL"] },
+          shop: { title: "SHOP Auto Coupon", badge: "Team Leader", detail: "ASP coupon management applications for 株式会社エムディビー.", items: ["Handled code review, optimization, bug fixing, and Google Maps integration", "Designed secure database schemas and managed STG deployments"] },
+          yamato: { title: "ヤマト管理系统", badge: "Full Stack / BE", detail: "Logistics management and dynamic QR payment solutions for TOPPAN & 株式会社エムディビー.", items: ["Performed analysis, design, project management, and secure API integration with Toppan payment QR"] },
+          catfee: { title: "Catfee Clubs", badge: "Full Stack Dev", detail: "Web3 application selling in-game items for Joint Stock Company Dai Phat.", items: ["Developed blockchain integrations with Metamask, Ethereum, Binance, Solana wallets", "Worked on React, NestJS, Docker, Nginx, PostgreSQL stack"] }
         }
       },
       vi: {
@@ -939,13 +983,13 @@
           mwg: { time: "10/2020 – 06/2021", company: "Tập đoàn Thế Giới Di Động (MWG)", role: "Web Developer — ERP", items: ["Xây dựng module mua hàng ERP cho Điện Máy Xanh, Topzone, Nhà Thuốc An Khang", "Rà soát code AngularJS/C# cải thiện hiệu năng và bảo trì", "Phối hợp nhóm dự án quy mô lớn, nâng cao kỹ năng quản lý"] }
         },
         proj: {
-          console4: { title: "Console4 - Petit Gift", desc: "Quản lý chiến dịch & coupon cho 株式会社エムディーピー", badge: "Team Leader", detail: "Phân tích, thiết kế, review code, tối ưu, sửa lỗi, thiết kế database và deploy STG cho coupon, auth, sns services." },
-          acHiroshima: { title: "AC Hiroshima Bank", desc: "Chương trình tích điểm với đồng bộ 12M dữ liệu/ngày", badge: "Team Leader", detail: "Review code, tối ưu, thiết kế database, đồng bộ dữ liệu người dùng 12 triệu điểm mỗi ngày." },
-          smc: { title: "SMC Line ミニアプリ", desc: "Hệ sinh thái chiến dịch & coupon cho SMC Corporation", badge: "Team Leader", detail: "Lãnh đạo backend console với auth, coupon, SNS, utility services và quản lý phát hành STG. Quy mô 14 người." },
-          th: { title: "TH Retailer App & Zalo miniapp", desc: "Nền tảng quản lý chuỗi bán lẻ cho TH Group", badge: "Team Leader", detail: "Phân tích, thiết kế, review code, tối ưu hiệu năng, triển khai CI/CD. Quy mô 7 người." },
-          shop: { title: "SHOP Auto Coupon", desc: "ASP quản lý coupon cho 株式会社エムディビー", badge: "Team Leader", detail: "Review code, tối ưu, sửa lỗi, tích hợp Google Maps, thiết kế DB và deploy STG." },
-          yamato: { title: "ヤマト管理システム", desc: "Logistics & QR động cho TOPPAN", badge: "Full Stack / BE", detail: "Phân tích, thiết kế, quản lý tiến độ, tích hợp API thanh toán Toppan an toàn." },
-          catfee: { title: "Catfee Clubs", desc: "Web3 vật phẩm in-game cho Dai Phat", badge: "Full Stack Dev", detail: "Tích hợp blockchain với Metamask, Ethereum, Binance, Solana." }
+          console4: { title: "Console4 - Petit Gift", badge: "Team Leader", detail: "Hệ thống quản lý chiến dịch, coupon, sản phẩm và template cho 株式会社エムディーピー.", items: ["Phân tích, thiết kế, review code, tối ưu, sửa lỗi", "Quản lý tiến độ dự án, phát triển tính năng, hỗ trợ thành viên", "Thiết kế database, setup coupon service, auth service, sns service, short service, utils service"] },
+          acHiroshima: { title: "AC Hiroshima Bank", badge: "Team Leader", detail: "Chương trình tích điểm khách hàng với khảo sát, phân phối coupon và hoàn thành nhiệm vụ.", items: ["Review code, tối ưu, sửa lỗi, quản lý tiến độ dự án", "Phát triển tính năng theo yêu cầu, hỗ trợ thành viên", "Thiết kế database, đồng bộ dữ liệu người dùng 12 triệu điểm mỗi ngày"] },
+          smc: { title: "SMC Line ミニアプリ", badge: "Team Leader", detail: "Hệ sinh thái quản lý chiến dịch và coupon cho SMC Corporation.", items: ["Lãnh đạo backend console trên Laravel 12, Vue.js, S3, Docker, Redis, MySQL, Kubernetes", "Thiết kế auth, coupon, SNS, utility services và quản lý phát hành STG"] },
+          th: { title: "TH Retailer App & Zalo miniapp", badge: "Team Leader", detail: "Nền tảng quản lý chuỗi bán lẻ cho TH Group.", items: ["Phân tích/thiết kế, review code, tối ưu hiệu năng, quản lý lịch trình", "Triển khai RabbitMQ, MinIO, PostgreSQL replication, cron sync, CI/CD cho STG, UAT, production", "Công nghệ: Laravel, React, RabbitMQ, MinIO, Docker, Nginx, Redis, MongoDB, PostgreSQL"] },
+          shop: { title: "SHOP Auto Coupon", badge: "Team Leader", detail: "Ứng dụng quản lý coupon cho 株式会社エムディビー.", items: ["Review code, tối ưu, sửa lỗi, tích hợp Google Maps", "Thiết kế database an toàn và quản lý deploy STG"] },
+          yamato: { title: "ヤマト管理システム", badge: "Full Stack / BE", detail: "Giải pháp quản lý logistics và QR động cho TOPPAN & 株式会社エムディビー.", items: ["Phân tích, thiết kế, quản lý tiến độ, tích hợp API thanh toán Toppan an toàn"] },
+          catfee: { title: "Catfee Clubs", badge: "Full Stack Dev", detail: "Ứng dụng Web3 bán vật phẩm in-game cho Công ty CP Đại Phát.", items: ["Phát triển tích hợp blockchain với Metamask, Ethereum, Binance, Solana", "Làm việc với React, NestJS, Docker, Nginx, PostgreSQL"] }
         }
       },
       ja: {
@@ -985,13 +1029,13 @@
           mwg: { time: "2020年10月 – 2021年6月", company: "Mobile World Investment Corporation", role: "Webエンジニア（ERP）", items: ["Dien May Xanh等の購買ERPモジュールを開発", "AngularJS/C#コードをレビューし、性能と保守性を改善", "大規模チームと連携し、マネジメントとコミュニケーション力を向上"] }
         },
         proj: {
-          console4: { title: "Console4 - Petit Gift", desc: "株式会社エムディーピー向けキャンペーン・oupon管理", badge: "チームリーダー", detail: "分析、設計、コードレビュー、最適化、バグ修正、DB設計、oupon・auth・sns服务的STG展開。" },
-          acHiroshima: { title: "AC Hiroshima Bank", desc: "一日12Mデータの顧客忠诚度プログラム", badge: "チームリーダー", detail: "コードレビュー、最適化、DB設計、一日1200万データポイントとのユーザーコアデータ同期。" },
-          smc: { title: "SMC Line ミニアプリ", desc: "SMC Corporation向けキャンペーン・ouponエコシステム", badge: "チームリーダー", detail: "認証・oupon・SNSなどのサービス設計とSTGリリース管理。14名体制。" },
-          th: { title: "TH Retailer App & Zalo miniapp", desc: "THグループ向け小売チェーン管理プラットフォーム", badge: "チームリーダー", detail: "要件分析、設計、コードレビュー、性能改善、CI/CD構築。7名体制。" },
-          shop: { title: "SHOP Auto Coupon", desc: "株式会社エムディビー向けoupon管理ASP", badge: "チームリーダー", detail: "コードレビュー、最適化、バグ修正、Google Maps連携、DB設計とSTG展開。" },
-          yamato: { title: "ヤマト管理システム", desc: "TOPPAN向け物流・動的QRコード", badge: "フルスタック / BE", detail: "要件定義、設計、進行管理、Toppan決済APIの安全な統合を実施。" },
-          catfee: { title: "Catfee Clubs", desc: "Dai Phat向けゲーム内アイテムのWeb3アプリ", badge: "フルスタック", detail: "Metamask、Ethereum、Binance、Solanaウォレットを統合。" }
+          console4: { title: "Console4 - Petit Gift", badge: "チームリーダー", detail: "株式会社エムディーピー向けキャンペーン、oupon、产品、テンプレート管理システム.", items: ["分析・設計、コードレビュー、コード最適化、バグ修正", "プロジェクト進捗管理、機能開発、メンバーサポート", "DB設計、ouponサービス、authサービス、snsサービス、shortサービス、utilsサービスのセットアップ"] },
+          acHiroshima: { title: "AC Hiroshima Bank", badge: "チームリーダー", detail: "調査モジュール、コupon配布、任務完了システムを備えた顧客忠诚度プログラム.", items: ["コードレビュー、コード最適化、バグ修正、プロジェクト進捗管理", "必要に応じた機能開発、メンバーサポート", "DB設計、一日1200万データポイントとのユーザーコアデータ同期"] },
+          smc: { title: "SMC Line ミニアプリ", badge: "チームリーダー", detail: "SMC Corporation向けキャンペーン・oupon管理エコシステム.", items: ["Laravel 12、Vue.js、S3、Docker、Redis、MySQL、Kubernetesでバックエンドを主導", "認証・oupon・SNS・ユーティリティサービスの設計とSTGリリース管理"] },
+          th: { title: "TH Retailer App & Zalo miniapp", badge: "チームリーダー", detail: "THグループ向け小売チェーン管理プラットフォーム.", items: ["要件分析・設計、コードレビュー、性能改善、スケジュール管理", "RabbitMQ、MinIO、PostgreSQLレプリケーション、cron同期、CI/CD構築", "技術: Laravel、React、RabbitMQ、MinIO、Docker、Nginx、Redis、MongoDB、PostgreSQL"] },
+          shop: { title: "SHOP Auto Coupon", badge: "チームリーダー", detail: "株式会社エムディビー向けoupon管理ASP.", items: ["コードレビュー、最適化、バグ修正、Google Maps連携", "安全なDB設計とSTG展開"] },
+          yamato: { title: "ヤマト管理システム", badge: "フルスタック / BE", detail: "TOPPAN & 株式会社エムディビー向け物流管理・動的QRコード決済ソリューション.", items: ["分析、設計、プロジェクト管理、ToppanQRコード決済APIの安全な統合"] },
+          catfee: { title: "Catfee Clubs", badge: "フルスタック", detail: "株式会社 Dai Phat向けのゲーム内アイテム販売Web3アプリケーション.", items: ["Metamask、Ethereum、Binance、Solanaウォレットでブロック체인統合", "React、NestJS、Docker、Nginx、PostgreSQLでの作業"] }
         }
       }
     };
