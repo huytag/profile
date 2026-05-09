@@ -1,122 +1,1210 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profile Bio - Ngo Thang</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <title>Thang Ngo Huy | Personal Profile</title>
+  <meta name="description" content="Ant Design inspired single-page profile of Thang Ngo Huy, Full Stack Developer specializing in Laravel, Vue.js, AWS, Docker and scalable architectures." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/5.19.0/reset.min.css" integrity="sha512-jnr5W1mYGCSIyXYHkEPCccX1hiPHaWCgVLfU0m9FIlBRHnExe7UpnTn91lqEcpwnw4fZxiZfL6SRv6nAn01Ssw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/5.19.0/antd.min.css" integrity="sha512-sdX1GewWIK1l44kPhFpP6GQPjqFjDTiM1hFMVX/6lKQMA2OIvlAy8BPMqiHi5XBD1YwDaDnRHkkPmAgH3x5TIA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/custom.css" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --page-bg: radial-gradient(circle at 20% 0%, #1c2133 0%, #10172c 55%, #080a14 100%);
+      --card-bg: rgba(19, 24, 41, 0.92);
+      --card-border: rgba(255, 255, 255, 0.05);
+      --hero-gradient: linear-gradient(140deg, #222b41, #131a31);
+      --text-primary: #f5f7ff;
+      --text-secondary: #c5cfe6;
+      --text-muted: #8d98ba;
+      --accent: #1677ff;
+      --accent-soft: #62a0ff;
+      --tag-bg: rgba(255, 255, 255, 0.05);
+      --control-bg: rgba(12, 17, 30, 0.9);
+      --control-border: rgba(255, 255, 255, 0.04);
+    }
+    body[data-theme="light"] {
+      color-scheme: light;
+      --page-bg: radial-gradient(circle at 20% 0%, #f6f9ff 0%, #eef3ff 55%, #e5ecff 100%);
+      --card-bg: rgba(255, 255, 255, 0.97);
+      --card-border: rgba(15, 23, 42, 0.06);
+      --hero-gradient: linear-gradient(140deg, #f9fbff, #edf2ff);
+      --text-primary: #0f172a;
+      --text-secondary: #465167;
+      --text-muted: #6b7280;
+      --accent: #1677ff;
+      --accent-soft: #0958d9;
+      --tag-bg: rgba(15, 23, 42, 0.06);
+      --control-bg: rgba(255, 255, 255, 0.95);
+      --control-border: rgba(15, 23, 42, 0.08);
+    }
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      background: var(--page-bg);
+      color: var(--text-primary);
+      padding: 32px 16px 48px;
+      transition: background 0.5s ease, color 0.3s ease;
+    }
+    a {
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+    .profile-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .control-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 22px;
+      border-radius: 22px;
+      background: var(--control-bg);
+      border: 1px solid var(--control-border);
+      margin-bottom: 28px;
+      gap: 16px;
+    }
+    .control-bar__title {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .control-bar__actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      padding: 8px 16px;
+      background: transparent;
+      color: var(--text-primary);
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .theme-toggle__icon {
+      font-size: 16px;
+    }
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      overflow: hidden;
+      background: transparent;
+    }
+    .lang-switch button {
+      border: none;
+      background: transparent;
+      padding: 8px 16px;
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .lang-switch button.active {
+      background: var(--accent);
+      color: #fff;
+    }
+    .ant-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      color: var(--text-primary);
+    }
+    .ant-card-head {
+      padding: 0 32px;
+      border-bottom: 1px solid var(--card-border);
+      min-height: 60px;
+    }
+    .ant-card-head-title {
+      color: var(--text-primary);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      padding: 14px 0;
+    }
+    .ant-card-body {
+      padding: 28px 32px 32px;
+    }
+    @media (max-width: 640px) {
+      body {
+        padding: 24px 12px;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .stat-list li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .ant-card-head {
+        padding: 0 20px;
+      }
+      .ant-card-body {
+        padding: 22px;
+      }
+      .control-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .timeline-item {
+        flex-direction: column;
+        padding-left: 18px;
+      }
+      .timeline-item::before {
+        left: -6px;
+      }
+      details summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+    .hero-card {
+      background: var(--hero-gradient);
+      overflow: hidden;
+      position: relative;
+      border-radius: 32px;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.2), transparent 45%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 32px;
+      border: 3px solid rgba(255, 255, 255, 0.22);
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    .hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-role {
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-size: 12px;
+      margin: 0;
+    }
+    .hero-name {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 8px 0 6px;
+      color: #fff;
+    }
+    body[data-theme="light"] .hero-name {
+      color: #0f172a;
+    }
+    .hero-location {
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .hero-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-actions a {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 600;
+      color: #fff;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    body[data-theme="light"] .hero-actions a {
+      color: #0f172a;
+      border-color: rgba(15, 23, 42, 0.2);
+    }
+    .hero-actions a:first-child {
+      background: var(--accent);
+      border-color: transparent;
+    }
+    .stat-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .stat-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+    .stat-list span:last-child {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .skill-card {
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(15, 20, 34, 0.75);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+    body[data-theme="light"] .skill-card {
+      background: rgba(248, 250, 255, 0.9);
+    }
+    .skill-card h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--text-primary);
+    }
+    .skill-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 24px;
+      border-left: 2px solid var(--card-border);
+      padding-left: 24px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(22, 119, 255, 0.15);
+    }
+    .timeline-item:last-child {
+      border-left-color: transparent;
+      padding-bottom: 0;
+    }
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--text-primary);
+    }
+    .timeline-item p {
+      margin: 4px 0 12px;
+      color: var(--text-secondary);
+    }
+    .timeline-item ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .ant-tag {
+      padding: 4px 12px;
+      font-size: 13px;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--card-border);
+    }
+    details {
+      border-radius: 22px;
+      border: 1px solid var(--card-border);
+      background: rgba(8, 12, 24, 0.88);
+      overflow: hidden;
+    }
+    body[data-theme="light"] details {
+      background: rgba(255, 255, 255, 0.9);
+    }
+    details summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 20px 24px;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary {
+      border-bottom: 1px solid var(--card-border);
+    }
+    .details-body {
+      padding: 20px 24px 28px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .details-body ul {
+      padding-left: 18px;
+      margin: 8px 0 0;
+    }
+    .details-body li {
+      margin-bottom: 6px;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-inter antialiased px-3">
-  <!-- Container -->
-  <main class="max-w-xl mx-auto my-8 bg-white rounded-2xl shadow-md overflow-hidden">
-    <!-- Cover image -->
-    <div class="relative h-28 sm:h-36 bg-gradient-to-tr from-[#0f172a] via-[#1e293b] to-[#0f172a] rounded-t-2xl overflow-hidden">
-      <img 
-        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0477d374-dae5-45ed-8c6d-74830089e530.png" 
-        alt="Modern abstract dark navy blue gradient background with smooth shapes and textures" 
-        class="w-full h-full object-cover"
-        onerror="this.style.display='none'"
-      />
+<body data-theme="dark">
+  <div class="profile-shell">
+    <header class="control-bar">
+      <span class="control-bar__title" data-i18n="header.label">Personal Profile</span>
+      <div class="control-bar__actions">
+        <button id="theme-toggle" type="button" class="theme-toggle" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+          <span class="theme-toggle__label" data-theme-label>Dark mode</span>
+        </button>
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" data-lang="vi">VI</button>
+          <button type="button" data-lang="en" class="active">EN</button>
+          <button type="button" data-lang="ja">日本語</button>
     </div>
-
-    <!-- Profile & user info -->
-    <section class="relative px-6 sm:px-10 -mt-16 flex flex-col items-center text-center">
-      <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-white shadow-lg bg-white overflow-hidden">
-        <img 
-          src="/assets/imgs/avt_me.png" 
-          alt="Avatar" 
-          class="w-full h-full object-cover"
-          onerror="this.style.display='none'"
-        />
       </div>
-      <p class="text-sm text-gray-500 mt-3">@jonny_ngo</p>
-      <h1 class="text-2xl sm:text-3xl font-semibold mt-1 tracking-tight text-gray-900">Ngo Thang</h1>
-      <div class="flex flex-wrap justify-center sm:justify-center gap-2 mt-2 text-gray-500 text-sm font-medium">
-        <span>Jonny Ngo</span>
-        <span class="mx-1">&bull;</span>
-        <span>Joined Jul 2025</span>
-      </div>
+    </header>
 
-      <!-- Buttons -->
-      <div class="mt-5 flex flex-wrap justify-center gap-4">
-        <button class="flex items-center gap-2 border border-gray-300 rounded-lg py-2 px-4 text-gray-700 font-medium hover:bg-gray-100 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
-          Follow
-        </button>
-        <button class="flex items-center gap-2 border border-gray-300 rounded-lg py-2 px-4 text-gray-700 font-medium hover:bg-gray-100 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2m-6 0H7a2 2 0 01-2-2v-6a2 2 0 012-2h6m0 0V5a3 3 0 116 0v3" />
-          </svg>
-          Message
-        </button>
-        <button aria-label="More options" class="flex items-center justify-center border border-gray-300 rounded-lg py-2 px-3 text-gray-700 hover:bg-gray-100 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="1" />
-            <circle cx="19" cy="12" r="1" />
-            <circle cx="5" cy="12" r="1" />
-          </svg>
-        </button>
+    <article class="ant-card hero-card ant-card-bordered" role="region" aria-label="Hero profile card">
+      <div class="ant-card-body">
+        <div class="hero-grid">
+          <div class="hero-avatar">
+            <img src="/assets/imgs/avt_me.png" alt="Portrait of Thang Ngo Huy" loading="lazy" referrerpolicy="no-referrer" />
+          </div>
+          <div>
+            <p class="hero-role" data-i18n="hero.role">Full Stack Developer</p>
+            <h1 class="hero-name">Thang Ngo Huy</h1>
+            <p class="hero-location" data-i18n="hero.location">Tan Binh, Ho Chi Minh City, Vietnam</p>
+            <div class="hero-actions">
+              <a href="mailto:huytagicloud@gmail.com" rel="noopener noreferrer" data-i18n="hero.buttons.email">Email</a>
+              <a href="tel:+84812455939" rel="noopener noreferrer" data-i18n="hero.buttons.call">Call</a>
+              <a href="https://github.com/huytag" target="_blank" rel="noopener noreferrer" data-i18n="hero.buttons.github">GitHub</a>
+            </div>
+          </div>
+          <div>
+            <ul class="stat-list">
+              <li>
+                <span data-i18n="hero.stats.dobLabel">Date of birth</span>
+                <span data-i18n="hero.stats.dobValue">Oct 09, 2000</span>
+              </li>
+              <li>
+                <span data-i18n="hero.stats.phoneLabel">Phone</span>
+                <span data-i18n="hero.stats.phoneValue">0812 455 939</span>
+              </li>
+              <li>
+                <span data-i18n="hero.stats.emailLabel">Email</span>
+                <span data-i18n="hero.stats.emailValue">huytagicloud@gmail.com</span>
+              </li>
+              <li hidden>
+                <span data-i18n="hero.stats.websiteLabel">Website</span>
+                <a href="https://profile.ngothang.tokyo" target="_blank" rel="noopener noreferrer" data-i18n="hero.stats.websiteValue">profile.ngothang.tokyo</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </article>
 
-      <!-- Bio/Description -->
-      <p class="mt-6 max-w-xl text-left text-gray-700 text-sm leading-relaxed">
-        A Full Stack Developer with 4 years of experience building scalable web applications using PHP (Laravel), Vue.js and modern web technologies. - Passionate about performance optimization, clean code and scalable system design. - Ability to effectively manage independent projects as well as collaborate in a team environment - Ability to quickly grasp new technical concepts and use them effectively. - Proven ability to develop complex APIs, optimize SQL queries and deploy applications with Docker and AWS. - Experience leading development teams, working with CI/CD pipelines and implementing security best practices. - Aspiring to become a Senior Full Stack Developer specializing in scalable system architecture and AI-driven solutions.
-      </p>
+    <section style="margin-top:32px;display:grid;gap:24px;">
+      <article class="ant-card ant-card-bordered">
+        <div class="ant-card-head">
+          <div class="ant-card-head-wrapper">
+            <div class="ant-card-head-title" data-i18n="section.objective.title">Objective</div>
+          </div>
+      </div>
+        <div class="ant-card-body">
+          <p class="ant-typography" data-i18n="section.objective.body" style="color:var(--text-secondary);line-height:1.8;">
+            Full Stack Developer with 4+ years of experience delivering scalable solutions for Japanese and Vietnamese enterprises. Passionate about performance optimization, secure distributed systems, and clean architecture using PHP (Laravel), CakePHP, Vue.js, React, Docker, and AWS. Adept at leading multicultural teams, running CI/CD workflows, and designing resilient microservices. Aspires to become a Senior Full Stack Developer specializing in high-scalability platforms and AI-augmented solutions.
+          </p>
+        </div>
+      </article>
+
+      <article class="ant-card ant-card-bordered">
+        <div class="ant-card-head">
+          <div class="ant-card-head-wrapper">
+            <div class="ant-card-head-title" data-i18n="section.education.title">Education</div>
+          </div>
+        </div>
+        <div class="ant-card-body">
+          <div class="ant-descriptions ant-descriptions-bordered" style="background:transparent;">
+            <div class="ant-descriptions-view">
+              <table>
+                <tbody>
+                  <tr class="ant-descriptions-row">
+                    <td class="ant-descriptions-item-label" data-i18n="section.education.labels.school">School</td>
+                    <td class="ant-descriptions-item-content" data-i18n="section.education.values.school">Ho Chi Minh City University of Industry and Trade</td>
+                  </tr>
+                  <tr class="ant-descriptions-row">
+                    <td class="ant-descriptions-item-label" data-i18n="section.education.labels.major">Major</td>
+                    <td class="ant-descriptions-item-content" data-i18n="section.education.values.major">Data Science</td>
+                  </tr>
+                  <tr class="ant-descriptions-row">
+                    <td class="ant-descriptions-item-label" data-i18n="section.education.labels.time">Time</td>
+                    <td class="ant-descriptions-item-content" data-i18n="section.education.values.time">Oct 2018 – May 2022</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ant-card ant-card-bordered">
+        <div class="ant-card-head">
+          <div class="ant-card-head-wrapper">
+            <div class="ant-card-head-title" data-i18n="section.skills.title">Technical Skills</div>
+          </div>
+        </div>
+        <div class="ant-card-body">
+          <div class="skill-grid">
+            <div class="skill-card">
+              <h4 data-i18n="section.skills.backend.title">Backend</h4>
+              <p data-i18n="section.skills.backend.desc">PHP (Laravel 12, CakePHP), Node.js (NestJS), RESTful API, GraphQL.</p>
+            </div>
+            <div class="skill-card">
+              <h4 data-i18n="section.skills.frontend.title">Frontend</h4>
+              <p data-i18n="section.skills.frontend.desc">Vue.js, React, Tailwind CSS, Bootstrap, Ant Design system.</p>
+            </div>
+            <div class="skill-card">
+              <h4 data-i18n="section.skills.database.title">Database</h4>
+              <p data-i18n="section.skills.database.desc">MySQL, PostgreSQL, Redis, MongoDB, replication & optimization.</p>
+            </div>
+            <div class="skill-card">
+              <h4 data-i18n="section.skills.devops.title">DevOps & Cloud</h4>
+              <p data-i18n="section.skills.devops.desc">Docker, AWS (EC2, S3, RDS, Route53, IAM, VPC), GitHub Actions, GitLab CI.</p>
+            </div>
+            <div class="skill-card">
+              <h4 data-i18n="section.skills.messaging.title">Messaging & Cache</h4>
+              <p data-i18n="section.skills.messaging.desc">RabbitMQ, Redis Queue, WebSocket, task queues.</p>
+            </div>
+            <div class="skill-card">
+              <h4 data-i18n="section.skills.other.title">Other Strengths</h4>
+              <p data-i18n="section.skills.other.desc">Linux, Nginx, Swoole, Microservices, API Security, High scalability systems.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ant-card ant-card-bordered">
+        <div class="ant-card-head">
+          <div class="ant-card-head-wrapper">
+            <div class="ant-card-head-title" data-i18n="section.honors.title">Honors & Awards</div>
+          </div>
+        </div>
+        <div class="ant-card-body">
+          <div class="ant-alert ant-alert-success ant-alert-with-description" role="alert">
+            <div class="ant-alert-content">
+              <div class="ant-alert-message" style="font-size:15px;" data-i18n="section.honors.highlight">First Prize — Student Scientific Research (2021–2022)</div>
+              <div class="ant-alert-description" style="color:var(--text-secondary);">
+                <span data-i18n="section.honors.description">Topic: Conveyor belt product counting and sorting system using artificial intelligence.</span>
+                <a href="https://pctsv.huit.edu.vn/ket-noi-doanh-nghiep/chung-ket-cuoc-thi-sinh-vien-nghien-cuu-khoa-hoc-nam-hoc-2021-2022" target="_blank" rel="noopener noreferrer" class="ant-typography" style="color:var(--accent-soft);margin-left:8px;" data-i18n="section.honors.link">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
     </section>
 
-    <section class="px-8 sm:px-12 mt-10 pb-10">
-      <!-- Information Header -->
-      <h2 class="text-gray-900 text-lg font-semibold mb-5 border-b border-gray-200 pb-2">Information</h2>
-
-      <!-- Information items grid -->
-      <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 text-gray-600 text-sm">
-        <div class="flex items-center gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linejoin="round" stroke-linecap="round" d="M12 2a10 10 0 11-7.016 17.017L4 22l4.984-1.016A10 10 0 0112 2z" />
-          </svg>
-          <dt class="font-medium text-gray-700">Website</dt>
-          <a class="ml-auto" target="_blank" href="profile.ngothang.tokyo" style="cursor: pointer;">profile.ngothang.tokyo</a>
+    <section style="margin-top:32px;display:grid;gap:24px;">
+      <article class="ant-card ant-card-bordered">
+        <div class="ant-card-head">
+          <div class="ant-card-head-wrapper">
+            <div class="ant-card-head-title" data-i18n="section.experience.title">Work Experience</div>
+          </div>
         </div>
-
-        <div class="flex items-center gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linejoin="round" stroke-linecap="round" d="M16 12a4 4 0 01-8 0m8 0a4 4 0 00-8 0m8 0a8 8 0 11-8 0 8 8 0 018 0z" />
-          </svg>
-          <dt class="font-medium text-gray-700">Email</dt>
-          <dd class="ml-auto truncate max-w-xs sm:max-w-none">huytagicloud@gmail.com</dd>
+        <div class="ant-card-body" style="padding-top:8px;">
+          <div class="timeline-item">
+            <div>
+              <span class="ant-tag ant-tag-blue" data-i18n="experience.smartGift.time">Jan 2023 – Present</span>
+            </div>
+            <div>
+              <h3 data-i18n="experience.smartGift.company">Joint Stock Company SmartGift Solution</h3>
+              <p data-i18n="experience.smartGift.role">Full Stack Developer / Team Leader</p>
+              <ul>
+                <li data-i18n="experience.smartGift.items.0">Led coupon distribution platform and mentored a team of 4 developers.</li>
+                <li data-i18n="experience.smartGift.items.1">Optimized PostgreSQL queries and caching, reducing query time by 40%.</li>
+                <li data-i18n="experience.smartGift.items.2">Drove blockchain-integrated campaign solutions for large retailers.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div>
+              <span class="ant-tag ant-tag-purple" data-i18n="experience.daiPhat.time">Jul 2021 – Dec 2022</span>
+            </div>
+            <div>
+              <h3 data-i18n="experience.daiPhat.company">Joint Stock Company Dai Phat</h3>
+              <p data-i18n="experience.daiPhat.role">Full Stack Developer</p>
+              <ul>
+                <li data-i18n="experience.daiPhat.items.0">Built blockchain-enabled web platform for in-game purchases and Unity features.</li>
+                <li data-i18n="experience.daiPhat.items.1">Integrated Metamask, Binance, Solana wallets and optimized smart-contract interactions.</li>
+                <li data-i18n="experience.daiPhat.items.2">Gained deep product development and Web3 deployment skills.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div>
+              <span class="ant-tag ant-tag-default" data-i18n="experience.mwg.time">Oct 2020 – Jun 2021</span>
+            </div>
+            <div>
+              <h3 data-i18n="experience.mwg.company">Mobile World Investment Corporation (MWG)</h3>
+              <p data-i18n="experience.mwg.role">Web Developer — ERP</p>
+              <ul>
+                <li data-i18n="experience.mwg.items.0">Developed ERP purchasing modules for Dien May Xanh, Topzone, and Nha Thuoc An Khang.</li>
+                <li data-i18n="experience.mwg.items.1">Reviewed AngularJS/C# codebase, optimizing performance and maintainability.</li>
+                <li data-i18n="experience.mwg.items.2">Collaborated with large project teams, improving management and communication skills.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-
-        <div class="flex items-center gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linejoin="round" stroke-linecap="round" d="M3 10l6 6-4 4m9-18v12m0 0l-4-4m4 4l4-4" />
-          </svg>
-          <dt class="font-medium text-gray-700">Phone</dt>
-          <dd class="ml-auto whitespace-nowrap">+84 812 455 939</dd>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linejoin="round" stroke-linecap="round" d="M12 4v16m-6-8h12" />
-          </svg>
-          <dt class="font-medium text-gray-700">Joined</dt>
-          <dd class="ml-auto whitespace-nowrap">09 July, 2025</dd>
-        </div>
-      </dl>
-
-      <!-- Tags badges -->
-      <div class="mt-8 flex flex-wrap gap-2 border-t border-gray-200 pt-6">
-        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Developer</span>
-        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Deployer</span>
-        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Design System</span>
-        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Product</span>
-        <span class="bg-gray-100 text-gray-800 text-xs sm:text-sm font-semibold py-2 px-4 rounded-lg cursor-default select-none">Succesfull</span>
-      </div>
+      </article>
     </section>
-  </main>
 
+    <section style="margin-top:32px;display:grid;gap:16px;">
+      <h2 class="ant-typography" style="color:var(--text-primary);font-size:24px;font-weight:600;margin:0;" data-i18n="section.projects.title">Highlighted Projects</h2>
+      <details open>
+        <summary>
+          <span data-i18n="projects.smc.title">SMC Line ミニアプリ / Console4-Web (Feb 2025 – Present)</span>
+          <span class="ant-tag ant-tag-blue" data-i18n="projects.smc.badge">Team Leader</span>
+        </summary>
+        <div class="details-body">
+          <p data-i18n="projects.smc.description">Campaign and coupon management ecosystem for SMC Corporation. Team size: 14.</p>
+          <ul>
+            <li data-i18n="projects.smc.items.0">Led backend console built on Laravel 12, Vue.js, S3, Docker, Redis, MySQL, Kubernetes.</li>
+            <li data-i18n="projects.smc.items.1">Designed auth, coupon, SNS, utility services and managed STG releases.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span data-i18n="projects.th.title">TH Retailer App & Zalo miniapp (Jun 2023 – May 2024)</span>
+          <span class="ant-tag ant-tag-purple" data-i18n="projects.th.badge">Team Leader</span>
+        </summary>
+        <div class="details-body">
+          <p data-i18n="projects.th.description">Retail chain management platform for TH Group. Team size: 7.</p>
+          <ul>
+            <li data-i18n="projects.th.items.0">Owned analysis/design, code reviews, performance tuning, and schedule management.</li>
+            <li data-i18n="projects.th.items.1">Implemented RabbitMQ, MinIO, PostgreSQL replication, cron sync, CI/CD for STG, UAT, production.</li>
+            <li data-i18n="projects.th.items.2">Stack: Laravel, React, RabbitMQ, MinIO, Docker, Nginx, Redis, MongoDB, PostgreSQL.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span data-i18n="projects.shop.title">SHOPの自動割引コード / オートクーポンBase</span>
+          <span class="ant-tag ant-tag-cyan" data-i18n="projects.shop.badge">Team Leader</span>
+        </summary>
+        <div class="details-body">
+          <p data-i18n="projects.shop.description">ASP coupon management applications for 株式会社エムディービー (Mar 2024 – Jul 2024).</p>
+          <ul>
+            <li data-i18n="projects.shop.items.0">Handled code review, optimization, bug fixing, and Google Maps integration.</li>
+            <li data-i18n="projects.shop.items.1">Designed secure database schemas and managed STG deployments with CakePHP, S3, Docker, Nginx, MySQL.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span data-i18n="projects.yamato.title">ヤマト管理システム & 動的QRコード対応</span>
+          <span class="ant-tag ant-tag-orange" data-i18n="projects.yamato.badge">Full Stack / BE Developer</span>
+        </summary>
+        <div class="details-body">
+          <p data-i18n="projects.yamato.description">Logistics management and dynamic QR payment solutions for TOPPAN株式会社 & 株式会社エムディービー (Mar 2023 – Sep 2023).</p>
+          <ul>
+            <li data-i18n="projects.yamato.items.0">Performed analysis, design, project management, and secure API integration with Toppan payment QR.</li>
+            <li data-i18n="projects.yamato.items.1">Stack: Laravel Livewire, CakePHP, S3, Docker, Nginx, Swoole, MySQL.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span data-i18n="projects.catfee.title">Catfee Clubs (Jul 2021 – May 2022)</span>
+          <span class="ant-tag ant-tag-default" data-i18n="projects.catfee.badge">Full Stack Developer</span>
+        </summary>
+        <div class="details-body">
+          <p data-i18n="projects.catfee.description">Web3 application selling in-game items for Joint Stock Company Dai Phat.</p>
+          <ul>
+            <li data-i18n="projects.catfee.items.0">Developed blockchain integrations with Metamask, Ethereum, Binance, Solana wallets.</li>
+            <li data-i18n="projects.catfee.items.1">Worked on React, NestJS, Docker, Nginx, PostgreSQL stack for code testing and optimization.</li>
+          </ul>
+      </div>
+      </details>
+    </section>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        header: {
+          label: "Personal Profile",
+          theme: { dark: "Dark mode", light: "Light mode" }
+        },
+        hero: {
+          role: "Full Stack Developer",
+          location: "Tan Binh, Ho Chi Minh City, Vietnam",
+          buttons: { email: "Email", call: "Call", github: "GitHub" },
+          stats: {
+            dobLabel: "Date of birth",
+            dobValue: "Oct 09, 2000",
+            phoneLabel: "Phone",
+            phoneValue: "0812 455 939",
+            emailLabel: "Email",
+            emailValue: "huytagicloud@gmail.com",
+            websiteLabel: "Website",
+            websiteValue: "profile.ngothang.tokyo"
+          }
+        },
+        section: {
+          objective: {
+            title: "Objective",
+            body: "Full Stack Developer with 4+ years of experience delivering scalable solutions for Japanese and Vietnamese enterprises. Passionate about performance optimization, secure distributed systems, and clean architecture using PHP (Laravel), CakePHP, Vue.js, React, Docker, and AWS. Adept at leading multicultural teams, running CI/CD workflows, and designing resilient microservices. Aspires to become a Senior Full Stack Developer specializing in high-scalability platforms and AI-augmented solutions."
+          },
+          education: {
+            title: "Education",
+            labels: { school: "School", major: "Major", time: "Time" },
+            values: {
+              school: "Ho Chi Minh City University of Industry and Trade",
+              major: "Data Science",
+              time: "Oct 2018 – May 2022"
+            }
+          },
+          skills: {
+            title: "Technical Skills",
+            backend: {
+              title: "Backend",
+              desc: "PHP (Laravel 12, CakePHP), Node.js (NestJS), RESTful API, GraphQL."
+            },
+            frontend: {
+              title: "Frontend",
+              desc: "Vue.js, React, Tailwind CSS, Bootstrap, Ant Design system."
+            },
+            database: {
+              title: "Database",
+              desc: "MySQL, PostgreSQL, Redis, MongoDB, replication & optimization."
+            },
+            devops: {
+              title: "DevOps & Cloud",
+              desc: "Docker, AWS (EC2, S3, RDS, Route53, IAM, VPC), GitHub Actions, GitLab CI."
+            },
+            messaging: {
+              title: "Messaging & Cache",
+              desc: "RabbitMQ, Redis Queue, WebSocket, task queues."
+            },
+            other: {
+              title: "Other Strengths",
+              desc: "Linux, Nginx, Swoole, Microservices, API Security, High scalability systems."
+            }
+          },
+          honors: {
+            title: "Honors & Awards",
+            highlight: "First Prize — Student Scientific Research (2021–2022)",
+            description: "Topic: Conveyor belt product counting and sorting system using artificial intelligence.",
+            link: "Read more"
+          },
+          experience: {
+            title: "Work Experience"
+          },
+          projects: {
+            title: "Highlighted Projects"
+          }
+        },
+        experience: {
+          smartGift: {
+            time: "Jan 2023 – Present",
+            company: "Joint Stock Company SmartGift Solution",
+            role: "Full Stack Developer / Team Leader",
+            items: [
+              "Led coupon distribution platform and mentored a team of 4 developers.",
+              "Optimized PostgreSQL queries and caching, reducing query time by 40%.",
+              "Drove blockchain-integrated campaign solutions for large retailers."
+            ]
+          },
+          daiPhat: {
+            time: "Jul 2021 – Dec 2022",
+            company: "Joint Stock Company Dai Phat",
+            role: "Full Stack Developer",
+            items: [
+              "Built blockchain-enabled web platform for in-game purchases and Unity features.",
+              "Integrated Metamask, Binance, Solana wallets and optimized smart-contract interactions.",
+              "Gained deep product development and Web3 deployment skills."
+            ]
+          },
+          mwg: {
+            time: "Oct 2020 – Jun 2021",
+            company: "Mobile World Investment Corporation (MWG)",
+            role: "Web Developer — ERP",
+            items: [
+              "Developed ERP purchasing modules for Dien May Xanh, Topzone, and Nha Thuoc An Khang.",
+              "Reviewed AngularJS/C# codebase, optimizing performance and maintainability.",
+              "Collaborated with large project teams, improving management and communication skills."
+            ]
+          }
+        },
+        projects: {
+          smc: {
+            title: "SMC Line ミニアプリ / Console4-Web (Feb 2025 – Present)",
+            badge: "Team Leader",
+            description: "Campaign and coupon management ecosystem for SMC Corporation. Team size: 14.",
+            items: [
+              "Led backend console built on Laravel 12, Vue.js, S3, Docker, Redis, MySQL, Kubernetes.",
+              "Designed auth, coupon, SNS, utility services and managed STG releases."
+            ]
+          },
+          th: {
+            title: "TH Retailer App & Zalo miniapp (Jun 2023 – May 2024)",
+            badge: "Team Leader",
+            description: "Retail chain management platform for TH Group. Team size: 7.",
+            items: [
+              "Owned analysis/design, code reviews, performance tuning, and schedule management.",
+              "Implemented RabbitMQ, MinIO, PostgreSQL replication, cron sync, CI/CD for STG, UAT, production.",
+              "Stack: Laravel, React, RabbitMQ, MinIO, Docker, Nginx, Redis, MongoDB, PostgreSQL."
+            ]
+          },
+          shop: {
+            title: "SHOPの自動割引コード / オートクーポンBase",
+            badge: "Team Leader",
+            description: "ASP coupon management applications for 株式会社エムディービー (Mar 2024 – Jul 2024).",
+            items: [
+              "Handled code review, optimization, bug fixing, and Google Maps integration.",
+              "Designed secure database schemas and managed STG deployments with CakePHP, S3, Docker, Nginx, MySQL."
+            ]
+          },
+          yamato: {
+            title: "ヤマト管理システム & 動的QRコード対応",
+            badge: "Full Stack / BE Developer",
+            description: "Logistics management and dynamic QR payment solutions for TOPPAN株式会社 & 株式会社エムディービー (Mar 2023 – Sep 2023).",
+            items: [
+              "Performed analysis, design, project management, and secure API integration with Toppan payment QR.",
+              "Stack: Laravel Livewire, CakePHP, S3, Docker, Nginx, Swoole, MySQL."
+            ]
+          },
+          catfee: {
+            title: "Catfee Clubs (Jul 2021 – May 2022)",
+            badge: "Full Stack Developer",
+            description: "Web3 application selling in-game items for Joint Stock Company Dai Phat.",
+            items: [
+              "Developed blockchain integrations with Metamask, Ethereum, Binance, Solana wallets.",
+              "Worked on React, NestJS, Docker, Nginx, PostgreSQL stack for code testing and optimization."
+            ]
+          }
+        }
+      },
+      vi: {
+        header: {
+          label: "Hồ sơ cá nhân",
+          theme: { dark: "Chế độ tối", light: "Chế độ sáng" }
+        },
+        hero: {
+          role: "Lập trình viên Full Stack",
+          location: "Tân Bình, TP. Hồ Chí Minh, Việt Nam",
+          buttons: { email: "Email", call: "Gọi", github: "GitHub" },
+          stats: {
+            dobLabel: "Ngày sinh",
+            dobValue: "09/10/2000",
+            phoneLabel: "Điện thoại",
+            phoneValue: "0812 455 939",
+            emailLabel: "Email",
+            emailValue: "huytagicloud@gmail.com",
+            websiteLabel: "Website",
+            websiteValue: "profile.ngothang.tokyo"
+          }
+        },
+        section: {
+          objective: {
+            title: "Mục tiêu",
+            body: "Lập trình viên Full Stack với hơn 4 năm kinh nghiệm xây dựng giải pháp mở rộng cho doanh nghiệp Nhật Bản và Việt Nam. Đam mê tối ưu hiệu năng, kiến trúc sạch và hệ thống phân tán bảo mật bằng PHP (Laravel), CakePHP, Vue.js, React, Docker và AWS. Thành thạo dẫn dắt đội ngũ đa văn hóa, vận hành CI/CD và thiết kế microservices bền vững. Mong muốn trở thành Senior Full Stack Developer tập trung vào nền tảng quy mô lớn và giải pháp kết hợp AI."
+          },
+          education: {
+            title: "Học vấn",
+            labels: { school: "Trường", major: "Chuyên ngành", time: "Thời gian" },
+            values: {
+              school: "ĐH Công nghiệp TP.HCM (HUIT)",
+              major: "Khoa học dữ liệu",
+              time: "10/2018 – 05/2022"
+            }
+          },
+          skills: {
+            title: "Kỹ năng chuyên môn",
+            backend: {
+              title: "Backend",
+              desc: "PHP (Laravel 12, CakePHP), Node.js (NestJS), RESTful API, GraphQL."
+            },
+            frontend: {
+              title: "Frontend",
+              desc: "Vue.js, React, Tailwind CSS, Bootstrap, Ant Design."
+            },
+            database: {
+              title: "Cơ sở dữ liệu",
+              desc: "MySQL, PostgreSQL, Redis, MongoDB, nhân bản & tối ưu."
+            },
+            devops: {
+              title: "DevOps & Cloud",
+              desc: "Docker, AWS (EC2, S3, RDS, Route53, IAM, VPC), GitHub Actions, GitLab CI."
+            },
+            messaging: {
+              title: "Message & Cache",
+              desc: "RabbitMQ, Redis Queue, WebSocket, hàng đợi tác vụ."
+            },
+            other: {
+              title: "Thế mạnh khác",
+              desc: "Linux, Nginx, Swoole, Microservices, bảo mật API, hệ thống quy mô lớn."
+            }
+          },
+          honors: {
+            title: "Thành tích & Giải thưởng",
+            highlight: "Giải Nhất – Nghiên cứu khoa học sinh viên (2021–2022)",
+            description: "Đề tài: Hệ thống đếm và phân loại sản phẩm băng chuyền bằng trí tuệ nhân tạo.",
+            link: "Xem chi tiết"
+          },
+          experience: { title: "Kinh nghiệm làm việc" },
+          projects: { title: "Dự án tiêu biểu" }
+        },
+        experience: {
+          smartGift: {
+            time: "01/2023 – Nay",
+            company: "Công ty CP SmartGift Solution",
+            role: "Full Stack Developer / Team Leader",
+            items: [
+              "Dẫn dắt nền tảng phân phối coupon và mentor nhóm 4 dev.",
+              "Tối ưu PostgreSQL và cache giúp giảm 40% thời gian truy vấn.",
+              "Triển khai chiến dịch tích hợp blockchain cho các nhà bán lẻ lớn."
+            ]
+          },
+          daiPhat: {
+            time: "07/2021 – 12/2022",
+            company: "Công ty CP Đại Phát",
+            role: "Full Stack Developer",
+            items: [
+              "Phát triển nền tảng web3 mua vật phẩm trong game và tính năng Unity.",
+              "Tích hợp ví Metamask, Binance, Solana và tối ưu smart contract.",
+              "Tích lũy kinh nghiệm phát triển sản phẩm và triển khai Web3."
+            ]
+          },
+          mwg: {
+            time: "10/2020 – 06/2021",
+            company: "Tập đoàn Thế Giới Di Động (MWG)",
+            role: "Web Developer — ERP",
+            items: [
+              "Xây dựng module mua hàng ERP cho Điện Máy Xanh, Topzone, Nhà Thuốc An Khang.",
+              "Rà soát code AngularJS/C# nhằm cải thiện hiệu năng và bảo trì.",
+              "Phối hợp nhóm dự án quy mô lớn, nâng cao kỹ năng quản lý và giao tiếp."
+            ]
+          }
+        },
+        projects: {
+          smc: {
+            title: "SMC Line ミニアプリ / Console4-Web (02/2025 – Nay)",
+            badge: "Team Leader",
+            description: "Hệ sinh thái quản lý chiến dịch & coupon cho SMC Corporation. Quy mô 14 người.",
+            items: [
+              "Lãnh đạo backend console trên Laravel 12, Vue.js, S3, Docker, Redis, MySQL, Kubernetes.",
+              "Thiết kế dịch vụ auth, coupon, SNS và điều phối phát hành STG."
+            ]
+          },
+          th: {
+            title: "TH Retailer App & Zalo miniapp (06/2023 – 05/2024)",
+            badge: "Team Leader",
+            description: "Nền tảng quản lý chuỗi bán lẻ cho TH Group. Quy mô 7 người.",
+            items: [
+              "Phụ trách phân tích/thiết kế, review code, tối ưu hiệu năng và lịch trình.",
+              "Triển khai RabbitMQ, MinIO, nhân bản PostgreSQL, cron sync và CI/CD từ STG đến UAT/Prod.",
+              "Công nghệ: Laravel, React, RabbitMQ, MinIO, Docker, Nginx, Redis, MongoDB, PostgreSQL."
+            ]
+          },
+          shop: {
+            title: "SHOPの自動割引コード / オートクーポンBase",
+            badge: "Team Leader",
+            description: "Ứng dụng quản lý coupon cho 株式会社エムディービー (03/2024 – 07/2024).",
+            items: [
+              "Phụ trách review code, tối ưu, sửa lỗi và tích hợp Google Maps.",
+              "Thiết kế DB an toàn, vận hành deploy STG với CakePHP, S3, Docker, Nginx, MySQL."
+            ]
+          },
+          yamato: {
+            title: "ヤマト管理システム & 動的QRコード対応",
+            badge: "Full Stack / BE Developer",
+            description: "Giải pháp quản lý logistics & QR động cho TOPPAN株式会社 & 株式会社エムディービー (03/2023 – 09/2023).",
+            items: [
+              "Phân tích, thiết kế, quản lý tiến độ và tích hợp API thanh toán Toppan an toàn.",
+              "Ngăn xếp: Laravel Livewire, CakePHP, S3, Docker, Nginx, Swoole, MySQL."
+            ]
+          },
+          catfee: {
+            title: "Catfee Clubs (07/2021 – 05/2022)",
+            badge: "Full Stack Developer",
+            description: "Ứng dụng Web3 bán vật phẩm in-game cho Công ty CP Đại Phát.",
+            items: [
+              "Phát triển tích hợp Metamask, Ethereum, Binance, Solana.",
+              "Làm việc với React, NestJS, Docker, Nginx, PostgreSQL cho kiểm thử và tối ưu."
+            ]
+          }
+        }
+      },
+      ja: {
+        header: {
+          label: "パーソナルプロフィール",
+          theme: { dark: "ダークモード", light: "ライトモード" }
+        },
+        hero: {
+          role: "フルスタックエンジニア",
+          location: "ベトナム・ホーチミン市タンビン区",
+          buttons: { email: "メール", call: "電話", github: "GitHub" },
+          stats: {
+            dobLabel: "生年月日",
+            dobValue: "2000年10月09日",
+            phoneLabel: "電話",
+            phoneValue: "0812 455 939",
+            emailLabel: "メール",
+            emailValue: "huytagicloud@gmail.com",
+            websiteLabel: "ウェブサイト",
+            websiteValue: "profile.ngothang.tokyo"
+          }
+        },
+        section: {
+          objective: {
+            title: "目標",
+            body: "日越企業向けに拡張性の高いソリューションを4年以上提供してきたフルスタックエンジニア。PHP（Laravel/CakePHP）、Vue.js、React、Docker、AWSを用いた性能最適化と安全な分散システム、クリーンアーキテクチャに情熱を持つ。多国籍チームのリード、CI/CD運用、堅牢なマイクロサービス設計に熟練。将来的には大規模プラットフォームとAI連携ソリューションに特化したシニアエンジニアを目指す。"
+          },
+          education: {
+            title: "学歴",
+            labels: { school: "学校", major: "専攻", time: "期間" },
+            values: {
+              school: "ホーチミン市工業貿易大学",
+              major: "データサイエンス",
+              time: "2018年10月 – 2022年5月"
+            }
+          },
+          skills: {
+            title: "技術スキル",
+            backend: {
+              title: "バックエンド",
+              desc: "PHP (Laravel 12, CakePHP)、Node.js (NestJS)、RESTful API、GraphQL。"
+            },
+            frontend: {
+              title: "フロントエンド",
+              desc: "Vue.js、React、Tailwind CSS、Bootstrap、Ant Design。"
+            },
+            database: {
+              title: "データベース",
+              desc: "MySQL、PostgreSQL、Redis、MongoDB、レプリケーションと最適化。"
+            },
+            devops: {
+              title: "DevOps・クラウド",
+              desc: "Docker、AWS（EC2, S3, RDS, Route53, IAM, VPC）、GitHub Actions、GitLab CI。"
+            },
+            messaging: {
+              title: "メッセージ & キャッシュ",
+              desc: "RabbitMQ、Redis Queue、WebSocket、タスクキュー。"
+            },
+            other: {
+              title: "その他",
+              desc: "Linux、Nginx、Swoole、マイクロサービス、APIセキュリティ、大規模システム。"
+            }
+          },
+          honors: {
+            title: "受賞歴",
+            highlight: "最優秀賞 — 学生科学研究 (2021–2022)",
+            description: "テーマ: AIを活用したコンベヤ製品のカウント・仕分けシステム。",
+            link: "詳細を見る"
+          },
+          experience: { title: "職務経歴" },
+          projects: { title: "主なプロジェクト" }
+        },
+        experience: {
+          smartGift: {
+            time: "2023年1月 – 現在",
+            company: "SmartGift Solution 株式会社",
+            role: "フルスタック / チームリーダー",
+            items: [
+              "クーポン配信プラットフォームを主導し、4名の開発者をメンター。",
+              "PostgreSQL とキャッシュを最適化し、クエリ時間を40%短縮。",
+              "大手小売向けブロックチェーン連携キャンペーンを推進。"
+            ]
+          },
+          daiPhat: {
+            time: "2021年7月 – 2022年12月",
+            company: "Dai Phat 株式会社",
+            role: "フルスタックエンジニア",
+            items: [
+              "ゲーム内アイテム販売のWeb3プラットフォームとUnity機能を実装。",
+              "Metamask、Binance、Solanaウォレットを統合し、スマートコントラクトを最適化。",
+              "プロダクト開発とWeb3デプロイの知見を獲得。"
+            ]
+          },
+          mwg: {
+            time: "2020年10月 – 2021年6月",
+            company: "Mobile World Investment Corporation",
+            role: "Webエンジニア（ERP）",
+            items: [
+              "Dien May Xanh等の購買ERPモジュールを開発。",
+              "AngularJS/C#コードをレビューし、性能と保守性を改善。",
+              "大規模チームと連携し、マネジメントとコミュニケーション力を向上。"
+            ]
+          }
+        },
+        projects: {
+          smc: {
+            title: "SMC Line ミニアプリ / Console4-Web (2025年2月 – 現在)",
+            badge: "チームリーダー",
+            description: "SMC向けキャンペーン・クーポン管理エコシステム。14名体制。",
+            items: [
+              "Laravel 12, Vue.js, S3, Docker, Redis, MySQL, Kubernetes でバックエンドを主導。",
+              "認証・クーポン・SNSなどのサービス設計とSTGリリース管理。"
+            ]
+          },
+          th: {
+            title: "TH Retailer App & Zalo miniapp (2023年6月 – 2024年5月)",
+            badge: "チームリーダー",
+            description: "THグループの小売チェーン管理プラットフォーム（7名体制）。",
+            items: [
+              "要件分析、設計、コードレビュー、性能改善、スケジュール管理を担当。",
+              "RabbitMQ、MinIO、PostgreSQLレプリケーション、cron同期、CI/CDを構築。",
+              "技術: Laravel, React, RabbitMQ, MinIO, Docker, Nginx, Redis, MongoDB, PostgreSQL。"
+            ]
+          },
+          shop: {
+            title: "SHOPの自動割引コード / オートクーポンBase",
+            badge: "チームリーダー",
+            description: "株式会社エムディービー向けのクーポン管理ASP (2024年3月 – 7月)。",
+            items: [
+              "コードレビュー・最適化・バグ修正・Google Maps連携を担当。",
+              "CakePHP, S3, Docker, Nginx, MySQL による安全なDB設計とSTG展開。"
+            ]
+          },
+          yamato: {
+            title: "ヤマト管理システム & 動的QRコード対応",
+            badge: "フルスタック / BEエンジニア",
+            description: "TOPPANグループ向け物流・QR決済システム (2023年3月 – 9月)。",
+            items: [
+              "要件定義、設計、進行管理、Toppan決済APIの安全な統合を実施。",
+              "Laravel Livewire, CakePHP, S3, Docker, Nginx, Swoole, MySQL を活用。"
+            ]
+          },
+          catfee: {
+            title: "Catfee Clubs (2021年7月 – 2022年5月)",
+            badge: "フルスタックエンジニア",
+            description: "Dai Phat向けゲーム内アイテム販売のWeb3アプリ。",
+            items: [
+              "Metamask, Ethereum, Binance, Solana ウォレットを統合。",
+              "React, NestJS, Docker, Nginx, PostgreSQL でテストと最適化を実施。"
+            ]
+          }
+        }
+      }
+    };
+
+    const accordions = document.querySelectorAll("details");
+    accordions.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (item.open) {
+          accordions.forEach((other) => {
+            if (other !== item) other.removeAttribute("open");
+          });
+        }
+      });
+    });
+
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themeLabelEl = document.querySelector("[data-theme-label]");
+    const themeIconEl = themeToggleBtn.querySelector(".theme-toggle__icon");
+    const langButtons = document.querySelectorAll(".lang-switch button");
+    let activeLang = "en";
+
+    const resolvePath = (obj, path) =>
+      path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
+
+    const applyTranslations = (lang) => {
+      const dict = translations[lang] || translations.en;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const text = resolvePath(dict, el.dataset.i18n);
+        if (text !== undefined) {
+          el.textContent = text;
+        }
+      });
+      updateThemeLabel();
+    };
+
+    const updateThemeLabel = () => {
+      const dict = translations[activeLang] || translations.en;
+      const theme = document.body.dataset.theme === "light" ? "light" : "dark";
+      const label = resolvePath(dict, `header.theme.${theme}`) || "";
+      themeLabelEl.textContent = label;
+      themeIconEl.textContent = theme === "light" ? "☀️" : "🌙";
+      themeToggleBtn.setAttribute("aria-pressed", theme === "light");
+    };
+
+    const setTheme = (nextTheme) => {
+      document.body.dataset.theme = nextTheme;
+      updateThemeLabel();
+    };
+
+    const setLanguage = (lang) => {
+      const safeLang = translations[lang] ? lang : "en";
+      activeLang = safeLang;
+      document.documentElement.lang = safeLang;
+      localStorage.setItem("preferred-lang", safeLang);
+      langButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.lang === safeLang));
+      applyTranslations(safeLang);
+    };
+
+    themeToggleBtn.addEventListener("click", () => {
+      const current = document.body.dataset.theme === "light" ? "light" : "dark";
+      const nextTheme = current === "light" ? "dark" : "light";
+      setTheme(nextTheme);
+    });
+
+    langButtons.forEach((btn) => {
+      btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+    });
+
+    const init = () => {
+      const storedLang = localStorage.getItem("preferred-lang") || "en";
+      document.body.dataset.theme = "dark";
+      setLanguage(storedLang);
+      updateThemeLabel();
+    };
+
+    init();
+  </script>
 </body>
 </html>
 
